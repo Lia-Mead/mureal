@@ -73,6 +73,14 @@ button:focus {
     outline: none;
 }
 
+.comments-box input {
+    margin: 5px;
+}
+
+.comment-btn {
+    margin: 10px;
+}
+
 .submit-btn:hover {
     background: #1c0d0d;
     color: #ffffff;
