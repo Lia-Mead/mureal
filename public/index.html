@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+    <title>Mureal</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;600&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <div id="main">
+        
+        <header> 
+            <h1>Mureal</h1>    
+        </header>
+        
+        <div class="diagonal-box">
+         <div class="content space">
+
+            <form>
+                <input v-model="title" class="input-style" type="text" name="title" placeholder="title">
+                <input v-model="description" class="input-style" type="text" name="description" placeholder="description">
+                <input v-model="username" class="input-style" type="text" name="username" placeholder="username">
+                
+                <label for="file">Choose a file</label>
+
+                <input @change="fileSelectHandler" type="file" name="file" accept="image/*" class="inputfile" ref="fileInput" id="file">
+
+<!--                 
+                <label for="file">Choose a file<input @change="fileSelectHandler" type="file" name="file" accept="image/*" class="inputfile" ref="fileInput" id="file"></label> -->
+                
+                <button class="submit-btn" @click.prevent="clickHandler">Submit</button>
+            </form>
+            <p v-if="errorMessage">Please fill out all the fields. Your photo should be smaller than 2MB</p>
+
+            
+            <div class="cards-box">
+                <div class="card" v-for='each in images' :key='each.id'>
+                    <div class="image-box">
+                        <a :href="'#' + each.id">
+                            <img :src=each.url :alt=each.description :imageid=each.id>
+                        </a>
+                        <p class="c-title">{{each.title}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <button v-if="seen" @click="more">More</button>
+
+         </div>
+        </div>
+
+            <popup-modal
+                v-if="selectedImage"
+                :id="selectedImage"
+                @close="closePopup"
+                >
+            </popup-modal>
+
+            <footer>
+                <p>© Made with ♡ by Liat Meadows 2021</p>
+            </footer>
+    </div>
+
+
+    <script type='text/x-template' id="modal">
+        <div class="overlay-bg" @click="closeMe">
+         <div class="overlay" @click.stop="">
+
+            <span class="close" @click="closeMe">X</span>
+            <h2>{{image.title}}</h2>
+
+            <div class="modal-img-box">
+                <img :src=image.url :alt=image.description :imageid=image.id>
+            </div>
+            <div class="modal-text">
+                <button class="like-btn" @click="increaseLikes">&hearts; {{likes}}</button>
+
+                <p>Created at: {{date}} by {{image.username}}</p>
+            </div>
+            <p>Description: {{image.description}}</p>
+
+            <comments-box 
+                :id="id"
+            ></comments-box>
+         </div>
+
+        </div>
+    </script>
+
+    <script type='text/x-template' id="comments">
+        <div class="comments-box">
+            <form>
+                <input v-model="username" name="username" type="text" placeholder="username">
+                <input class="input-comment" v-model="comment" name="comment" type="text" placeholder="comment">
+                <button @click.prevent="addComment">Submit comment</button>
+                <!-- <button>Delete picture</button> -->
+                <!-- <div class="all-comments">Comments</div> -->
+                <div class="all-comments">
+                    <div v-for="each in comments">
+                        <p class="comment">{{each.comment}}</p>
+                        <p class="user">Made by {{each.username}} on {{each.created_at}}</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </script>
+
+    <script src="/js/vue.js"></script>
+    <script src="/js/axios.min.js"></script>
+    <script src="/js/script.js"></script>
+
+</body>
+</html>

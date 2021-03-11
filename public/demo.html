@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+    <title>My Image Board</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>My Imageboard</h1>
+
+    <div id="main">
+        <h2>Hi {{name}}, take good care</h2>
+        <h2>10 * 2 = {{10 * 2}}</h2>
+        <h2>10 * 2 = {{10 * 2}}</h2>
+        <h2>{{name.toUppercase}}</h2>
+
+        <h3 v-if='seen'>You can see me</h3>
+        <h3 v-else='seen'>Seen is falsy if you see this</h3>
+
+        <ul v-if='cities.length'>
+            <h2>There are the cities:</h2>
+            <li v-for='each in cities' @click='myFunction'>{{each.name}}, {{each.country}}</li>
+        </ul>
+
+
+    </div>
+
+
+
+    <script src="/js/vue.js"></script>
+    <script src="/js/axios.min.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,392 @@
+* {
+    font-family: "Comfortaa", cursive;
+    margin: 0;
+}
+
+/* body {
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+} */
+
+#main {
+    /* background-color: #e8e7e7; */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+html {
+    display: table;
+    margin: auto;
+    width: 100%;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+header {
+    background-color: #fff;
+}
+
+form {
+    text-align: center;
+    padding: 20px 10px;
+    /* gap: 20px; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+button {
+    min-width: 150px;
+    height: 34px;
+    transition: 0.4s ease-out;
+    background: #1c0d0d;
+    border-radius: 11px;
+    background: #ffffff;
+    color: #262626;
+    width: 150px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    /* transform: translateY(10px);
+    transition: 0.5s; */
+    background: #ff0099;
+    color: #ffffff;
+}
+
+button:focus {
+    outline: none;
+}
+
+.submit-btn:hover {
+    background: #1c0d0d;
+    color: #ffffff;
+}
+
+.like-btn {
+    background: transparent;
+    border: none;
+    color: rgb(255, 255, 255);
+    font-size: 27px;
+}
+
+.like-btn:hover {
+    color: #ff0099;
+    box-shadow: transparent;
+    font-size: 47px;
+    background-color: transparent;
+}
+
+.like-btn:focus {
+    outline: none;
+}
+
+.diagonal-box {
+    background-image: linear-gradient(45deg, #6303b1, #ff0099);
+    transform: skewY(-5deg);
+    padding-bottom: 3%;
+}
+
+.content {
+    /* max-width: 50em; */
+    margin: 0 auto;
+    transform: skewY(5deg);
+}
+
+.space {
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+nav ul {
+    display: flex;
+    align-content: flex-end;
+    justify-content: flex-end;
+    margin: 10px;
+}
+
+nav li {
+    margin: 0 10px;
+    list-style: none;
+    text-decoration: none;
+    display: inline;
+}
+
+nav li a {
+    text-decoration: none;
+    color: #727272;
+}
+
+nav li a:hover {
+    text-decoration: none;
+    color: #ff0099;
+}
+
+h1 {
+    text-align: center;
+    margin: 50px auto;
+    color: #1c0c0c;
+}
+
+.card-grid {
+    height: 300px;
+    background-color: white;
+    padding: 11px;
+    border: 2px solid #d4cccc;
+    border-radius: 9px;
+    margin: 20px;
+}
+
+.cards-box {
+    display: grid;
+    justify-items: center;
+    justify-content: center;
+    grid-template-rows: min-content;
+    grid-auto-rows: min-content;
+    gap: 40px;
+    grid-auto-flow: row;
+    width: 80vw;
+    margin: 20px auto 60px;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+}
+
+.card {
+    height: 300px;
+    background-color: #1c0c0c;
+    padding: 11px;
+    border: 2px solid #d4cccc;
+    border-radius: 9px;
+    color: white;
+    transition: 0.4s ease-out;
+    box-shadow: 0px 7px 10px;
+}
+
+.card:hover {
+    transform: translateY(10px);
+    transition: 0.5s;
+}
+
+.image-box {
+    width: 360px;
+    height: 250px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 9px;
+}
+
+.c-title {
+    margin-top: 11px;
+    text-transform: capitalize;
+}
+
+footer {
+    color: #040404;
+    text-align: center;
+    font-weight: 300;
+    margin-top: 25px;
+}
+
+input {
+    padding: 0.7em 1%;
+    border-radius: 11px;
+}
+
+.input-style {
+    border-radius: 11px;
+    border: 1px solid transparent;
+    margin: 0 10px;
+}
+
+.overlay-bg {
+    background-color: rgba(23, 23, 22, 0.7);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.overlay {
+    background-color: black;
+    height: 80%;
+    width: 60%;
+    color: white;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 30px 20px;
+    margin: auto;
+    z-index: 5;
+    border-radius: 11px;
+    color: white;
+}
+
+.x-icon {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 400;
+    margin: 10px 5px;
+}
+
+.close {
+    float: right;
+}
+
+.modal-img-box {
+    width: auto;
+    height: 410px;
+    padding: 20px 0;
+}
+
+.modal-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modal-text {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    background-color: black;
+    display: inline-block;
+    cursor: pointer;
+    /* pointer-events: none; */
+}
+
+label {
+    color: rgb(230, 230, 230);
+    background: transparent;
+    padding: 3px;
+    border-radius: 11px;
+
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    background-color: black;
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 10px;
+    /* pointer-events: none; */
+}
+
+label:hover {
+    color: #ff0099;
+    background: rgb(15, 13, 13);
+    padding: 3px;
+    border-radius: 11px;
+}
+
+.all-comments {
+    text-align: left;
+    width: 100%;
+    overflow-y: scroll;
+    max-height: 100px;
+}
+
+.user {
+    font-size: 12px;
+    margin-bottom: 2%;
+}
+
+.comment {
+    color: rgb(243, 212, 212);
+    margin-bottom: 1%;
+}
+
+@media screen and (min-width: 375px) and (max-width: 667px) {
+    .cards-box {
+        grid-template-columns: 1fr;
+    }
+
+    form {
+        flex-direction: row;
+        gap: 5%;
+    }
+
+    input {
+        padding: 3%;
+        margin: 2%;
+        width: 100%;
+    }
+
+    .input-style {
+        margin: 10px;
+    }
+
+    button {
+        width: 80%;
+        height: 47px;
+        margin: 20px 0;
+    }
+
+    label {
+        margin: 20px;
+    }
+
+    .overlay {
+        height: 90%;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .card {
+        margin: 0 auto;
+    }
+}
+@media screen and (min-width: 668px) and (max-width: 900px) {
+    .input-style {
+        margin: 10px;
+    }
+}
