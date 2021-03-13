@@ -248,7 +248,7 @@ input {
 
 .overlay {
     background-color: black;
-    height: 60%;
+    height: 80%;
     width: 60%;
     color: white;
     position: fixed;
@@ -279,7 +279,7 @@ input {
 
 .modal-img-box {
     width: auto;
-    height: 410px;
+    height: 360px;
     padding: 20px 0;
 }
 
@@ -326,7 +326,6 @@ label {
     display: inline-block;
     cursor: pointer;
     margin-right: 10px;
-    /* pointer-events: none; */
 }
 
 label:hover {
@@ -340,7 +339,7 @@ label:hover {
     text-align: left;
     width: 100%;
     overflow-y: scroll;
-    height: 170px;
+    height: 220px;
 }
 
 .user {
