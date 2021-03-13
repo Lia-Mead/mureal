@@ -248,7 +248,7 @@ input {
 
 .overlay {
     background-color: black;
-    height: 80%;
+    height: 60%;
     width: 60%;
     color: white;
     position: fixed;
@@ -340,7 +340,7 @@ label:hover {
     text-align: left;
     width: 100%;
     overflow-y: scroll;
-    max-height: 100px;
+    height: 170px;
 }
 
 .user {
