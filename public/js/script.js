@@ -85,6 +85,18 @@
                         console.log("error", err);
                     });
             },
+            deletePost: function (id) {
+                let self = this;
+                axios
+                    .post(`/delete/${self.id}`)
+                    .then(function (response) {
+                        self.$emit("delete", id);
+                        self.$emit("close");
+                    })
+                    .catch(function (err) {
+                        console.log("err in post delete: ", err);
+                    });
+            },
         },
     });
 
@@ -298,6 +310,12 @@
             fileSelectHandler: function (e) {
                 // console.log("e: ", e);
                 this.file = e.target.files[0];
+            },
+            deletePost: function (id) {
+                var self = this;
+                console.log("this.id: ", id);
+                const found = self.images.find((element) => element.id == id);
+                self.images.splice(self.images.indexOf(found), 1);
             },
         }, // methods end
     });

@@ -153,6 +153,23 @@ app.post("/likes/:imageId", (req, res) => {
         });
 });
 
+app.post("/delete/:imageId", async (req, res) => {
+    const { imageId } = req.params;
+    console.log(imageId);
+    try {
+        // const selectPost = await db.selectPost(imageId);
+        // if (selectPost.rows[0].url) {
+        //     s3.deleteImage(selectPost.rows[0].url);
+        // }
+        const likes = await db.deleteLikes(imageId);
+        const comments = await db.deleteComments(imageId);
+        const image = await db.deletePost(imageId);
+        res.json({ success: true });
+    } catch (err) {
+        console.log("err in delete images: ", err);
+    }
+});
+
 // app.listen(8080, () => console.log("IB server is listening.."));
 
 if (require.main == module) {
